@@ -1,0 +1,22 @@
+{
+  "Functional": [
+    "This project aims to expand the bank\u2019s lending capabilities by introducing support for three new currencies: Chinese Yuan (CNY), Offshore Chinese Yuan (CNH), and Egyptian Pound (EGP). The system must allow bankers to originate loans in these currencies and perform balance enquiries with real-time currency-specific data."
+  ],
+  "Business": [
+    "Bankers will select the specific currency (CNY, CNH, or EGP) at the point of loan inception. The system will validate the currency code, apply the relevant exchange rate, and store the record. Enquiries will display the outstanding balance and interest in the original currency of the loan.",
+    "The frontend must be updated to include the new currency codes in the loan creation and enquiry modules.",
+    "Ensure that selecting these currencies triggers the correct decimal formatting (e.g., 2 decimal places for these specific codes).",
+    "Update the search filters to allow filtering by Currency.",
+    "Update the Results Grid to display the currency symbol next to the principal amount.",
+    "The backend must recognize and process the ISO codes for the new currencies and ensure they map correctly to the accounting ledger.",
+    "The Ref_Currency table must be appended with the following values:",
+    "Update the Currency Validation Service to accept the new ISO codes.",
+    "Update the Interest Calculation Engine to pull the specific benchmark rates associated with CNY/CNH (e.g., SHIBOR) and EGP (e.g., Corridor Rate).",
+    "Core Banking System (CBS): Must recognize new currency IDs for ledger entries.",
+    "Reporting Engine: To generate monthly statements in the new currencies.",
+    "Fact Tables: Update FACT_LOAN_BALANCE to ensure no data truncation occurs when storing EGP values.",
+    "Dimensions: Update DIM_CURRENCY to match the backend database table.",
+    "Rate Volatility: If the exchange rate for EGP is unavailable from the Treasury feed, the system should block loan creation and alert the administrator.",
+    "Regulatory Limits: Loans in CNY/CNH may be subject to specific cross-border regulatory caps; the system should trigger a warning if the loan amount exceeds the predefined threshold."
+  ]
+}

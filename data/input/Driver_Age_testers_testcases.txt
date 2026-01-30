@@ -1,0 +1,20 @@
+US-001: Verify that the additional  driver's age is above 18 year in the Auto lease- Additional Driver Screen 
+US-002: Verify that when driver's age is less than 18 years, then system show the error message "Applicant age is not in Range".  
+US-003: Verify that when driver's age is less than 18 years, then along with error message and disables below action buttons:
+Print
+Scan & Upload
+Browse & Upload
+Transmit
+US-004: Verify that when additional  drivers age is less than 18 years, all actions buttons will be disabled, except for the reset button.
+US-005: Verify that after clicking on Reset button user is able fill the valid data again.
+US-006: Verify that driver ID Number legnth is 10 digit.
+US-007: Validate driver's Date of Birth input in Hijari calendar format.
+US-008: Validate driver's Linces Expiry Date input in Hijari calendar format.
+US-009: Verify that max age limit system is accepting for additional driver.
+US-010: Verify that on click of final transmit button system is showing OK message.
+US-011: The behavior of these GLA Products will be same as existing 6500-0008 GLA SAR product.
+US-012: New Currency CNH, CNY and EGP will be added in treasury’s EPP service in-order to get the latest conversion rate which will be utilized during cross currency financial transaction.
+US-013: New Currency i.e. CNH, CNY and EGP will be added in CBS.
+US-014: Accounts created with CNH, CNY and EGP currencies in NBL will be supported by CBS during financial and non-financial transactions.
+US-015: Performing, non-performing and write-off OGLs will be shared by Business team during solution phase.
+US-016: New products mentioned in FR-001, FR-002, FR-003 will have following NPA and WO components:

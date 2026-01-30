@@ -1,0 +1,71 @@
+{
+    "document_name": "Driver_Age_SSD.docx",
+    "sections": [
+        {
+            "feature": "Business/Integration Requirement",
+            "sub_section": "Functional Requirement",
+            "content": [
+                "NBL to suppress the creation of additional driver details against the asset If the entered driver’s age is less than 18 years to comply with the age restriction policy."
+            ]
+        },
+        {
+            "feature": "Business/Integration Requirement",
+            "sub_section": "Non-Functional Requirement",
+            "content": [
+                "N/A",
+                "Business Requirement Approval"
+            ]
+        },
+        {
+            "feature": "Business/Integration Process",
+            "sub_section": "“As IS” Process (Work Flow/DATA Flow)",
+            "content": [
+                "Currently, when adding an additional driver in the NBL system, the system shows an error message if the driver’s age is below 18. However, even after the error alerts, the action buttons (such as print, transmit, and upload) are still enabled — meaning the user can still print and proceed with submission, which contradicts the age restriction policy."
+            ]
+        },
+        {
+            "feature": "Business/Integration Process",
+            "sub_section": "“To BE” Process (Work Flow/Data Flow)",
+            "content": [
+                "Enhancement in the NBL application to suppress the additional driver creation event for the cases where driver’s age is below 18 as per age restriction policy. If the entered driver’s age is below 18, NBL alerts the user and does not allow to proceed further by disabling all the action buttons except “Reset” button."
+            ]
+        },
+        {
+            "feature": "Solution Design",
+            "sub_section": "in scope",
+            "content": [
+                "Restriction will be created in the NBL application when the additional driver's age is below 18. System triggers the message \"Applicant Age not in Range\" as in the current BAU. \nAdditionally, disables below action buttons. Print                Scan & Upload               Browse & Upload  Transmit",
+                "However, the “Reset” action button will be enabled for the user to change the entered details.",
+                "The user could proceed with the workflow only if the age entered is above 18 else the request will not be considered for further steps."
+            ]
+        },
+        {
+            "feature": "Solution Design",
+            "sub_section": "out of scope",
+            "content": [
+                "Any specific change NOT mentioned within the scope of this document will be considered as out of scope.",
+                "Comments added in document OR handwritten notes will not be considered for development.",
+                "Any OTHER changes not mentioned in final SSD are not in scope"
+            ]
+        },
+        {
+            "feature": "Solution Design",
+            "sub_section": "Assumptions",
+            "content": [
+                "All the current validations and workflows in the system will work as per the existing BAU process, unless explicitly mentioned."
+            ]
+        },
+        {
+            "feature": "Proposed Solution design",
+            "sub_section": "NBL CHANGES",
+            "content": [
+                "NBL to Implement new restrictions in the NBL Application under Miscellaneous Menu → Auto Lease/Residential Finance - Asset Management → Function – A: Additional Driver",
+                "If the Age entered for the Additional driver is below 18, application should alert the user with the message “Applicant age not in Range” as per the BAU, additionally all the action buttons will be disabled except the “Reset” Button.",
+                "No changes in the “Reset” button functionality. As per the existing functionality, the reset button clears the user entered data and the data populated based on user selection of fields.",
+                "If the Age entered for the Additional driver is above 18, application should behave as normal as BAU.",
+                "Note: The above image is for illustration purposes only. The actual output may vary during the development phase.",
+                "Note: The above image is for illustration purposes only. The actual output may vary during the development phase."
+            ]
+        }
+    ]
+}

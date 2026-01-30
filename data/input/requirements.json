@@ -1,0 +1,14 @@
+{
+  "Business": [
+    "Enhancement in the NBL application to suppress the additional driver creation event for the cases where driver’s age is below 18 as per age restriction policy. If the entered driver’s age is below 18, NBL alerts the user and does not allow to proceed further by disabling all the action buttons except “Reset” button."
+  ],
+  "General": [
+    "Restriction will be created in the NBL application when the additional driver's age is below 18. System triggers the message \"Applicant Age not in Range\" as in the current BAU. \nAdditionally, disables below action buttons. Print                Scan & Upload               Browse & Upload  Transmit",
+    "The user could proceed with the workflow only if the age entered is above 18 else the request will not be considered for further steps.",
+    "Any specific change NOT mentioned within the scope of this document will be considered as out of scope.",
+    "Comments added in document OR handwritten notes will not be considered for development.",
+    "All the current validations and workflows in the system will work as per the existing BAU process, unless explicitly mentioned.",
+    "If the Age entered for the Additional driver is below 18, application should alert the user with the message “Applicant age not in Range” as per the BAU, additionally all the action buttons will be disabled except the “Reset” Button.",
+    "If the Age entered for the Additional driver is above 18, application should behave as normal as BAU."
+  ]
+}

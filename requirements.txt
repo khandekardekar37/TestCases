@@ -1,0 +1,23 @@
+# Document Processing
+
+# Data Extraction
+python-docx
+PyMuPDF
+
+# Data Classification & TestCase Validator
+sentence-transformers
+transformers
+torch
+numpy
+scikit-learn
+scipy
+
+# TestCase Generator
+langchain 
+langchain-community
+langchain-core
+langgraph
+
+# Utilities
+tqdm
+regex

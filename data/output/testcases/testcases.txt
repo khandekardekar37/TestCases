@@ -1,0 +1,56 @@
+Positive:
+1. Verify that the system allows originating a loan in Chinese Yuan (CNY) when valid loan details are provided.
+2. Verify that the system allows originating a loan in Offshore Chinese Yuan (CNH) when valid loan details are provided.
+3. Verify that the system allows originating a loan in Egyptian Pound (EGP) when valid loan details are provided.
+4. Verify that the system correctly displays real-time balance enquiry for loans originated in CNY, CNH, and EGP.
+5. Verify that the system allows multiple balance enquiries for different loans originated in CNY, CNH, and EGP.
+6. Verify that the system accepts valid currency codes (CNY, CNH, EGP) for loan creation and enquiry modules.
+7. Verify that the system applies correct decimal formatting (2 decimal places) when selecting these specific currency codes.
+8. Verify that the search filters allow filtering by Currency (CNY, CNH, EGP).
+9. Verify that the Results Grid displays the currency symbol next to the principal amount for all three currencies.
+10. Verify that the backend recognizes and processes the ISO codes for the new currencies (CNY, CNH, EGP) and maps them correctly to the accounting ledger.
+11. Verify that the Ref_Currency table is appended with the correct values for CNY, CNH, and EGP.
+12. Verify that the Currency Validation Service accepts the new ISO codes (CNY, CNH, EGP).
+13. Verify that the Interest Calculation Engine pulls the specific benchmark rates associated with CNY/CNH (e.g., SHIBOR) and EGP (e.g., Corridor Rate).
+14. Verify that CBS recognizes new currency IDs for ledger entries (CNY, CNH, EGP).
+15. Verify that the Reporting Engine generates monthly statements in the new currencies (CNY, CNH, EGP).
+16. Verify that FACT_LOAN_BALANCE can store EGP values without data truncation.
+17. Verify that DIM_CURRENCY is updated to match the backend database table for CNY, CNH, and EGP.
+
+Negative:
+1. Verify that the system blocks loan origination when invalid loan details are provided (e.g., missing or incorrect currency).
+2. Verify that the system displays an error message when attempting to originate a loan with an unsupported currency.
+3. Verify that the system blocks balance enquiry for loans not originated in CNY, CNH, and EGP.
+4. Verify that the system displays an error message when attempting a balance enquiry for a loan not originated in CNY, CNH, and EGP.
+5. Verify that the system rejects invalid currency codes other than CNY, CNH, or EGP for loan creation and enquiry modules.
+6. Verify that the system displays an error message when selecting invalid currency codes.
+7. Verify that the system blocks loan creation if the exchange rate for EGP is unavailable from the Treasury feed.
+8. Verify that the system triggers a warning if the loan amount in CNY/CNH exceeds the predefined cross-border regulatory caps.
+
+Boundary:
+1. Verify that the system allows loan origination with the minimum and maximum allowed amounts for each currency (if applicable).
+2. Verify that the system correctly displays the balance for loans with the minimum and maximum allowed amounts for each currency (if applicable).
+3. Verify that the system handles cases where the entered amount is exactly at the minimum or maximum limit for each currency (if applicable).
+4. Verify that the system allows balance enquiry for loans with the minimum and maximum allowed amounts for each currency (if applicable).
+5. Verify that the system accepts and processes currency codes at the boundary of valid length (e.g., 3 characters for ISO codes).
+6. Verify that the system allows loan creation when the exchange rate for EGP is exactly at the threshold for availability from the Treasury feed.
+7. Verify that the system triggers a warning when the loan amount in CNY/CNH is exactly at the boundary of the predefined cross-border regulatory caps.
+
+Positive:
+1. Verify that the system generates a monthly statement correctly when the selected currency matches with the one in the backend database.
+2. Verify that the system allows switching between different currencies for generating monthly statements.
+3. Verify that the system displays the correct conversion rate while generating monthly statements in non-native currencies.
+4. Verify that the system saves the selected currency for future use when generating subsequent monthly statements.
+
+Negative:
+1. Verify that the system does not allow generating a monthly statement when no currency is selected.
+2. Verify that the system displays an error message "No Currency Selected" when no currency is selected.
+3. Verify that the system does not generate a monthly statement with incorrect conversion rate for unsupported currencies.
+4. Verify that the system displays an error message "Unsupported Currency" for unsupported currencies.
+
+Boundary:
+1. Verify that the system generates a monthly statement correctly when the selected currency is at the boundary of supported and unsupported currencies (e.g., Euro for European countries).
+2. Verify that the system handles rounding errors correctly while generating monthly statements in currencies with decimal places.
+3. Verify that the system displays an appropriate error message when the backend database does not contain the currency selected for generating a monthly statement.
+4. Verify that the system updates DIM_CURRENCY table correctly after generating a monthly statement.
+
